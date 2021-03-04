@@ -74,15 +74,7 @@ class HomeController extends AbstractController{
         $currencyConverterService->setToCurrency($toCurrency);
         $currencyConverterService->setFromCurrency(['MXN', 'ERN', 'DZD', 'CDF', 'MAD', 'SYP']);
         // $currencyConverterService->setFromCurrency('MXN');
-        // $result = $currencyConverterService->convertCurrency();
-        $result = [
-            'USD_MXN' => 21.08881,
-            'USD_ERN' => 14.999935,
-            'USD_DZD' => 133.13249,
-            'USD_CDF' => 1995.000031,
-            'USD_MAD' => 8.947451,
-            'USD_SYP' => 512.775718,
-        ];
+        $result = $currencyConverterService->convertCurrency();
         
         $entityManager = $this->getDoctrine()->getManager();
         foreach($result as $index => $value){
